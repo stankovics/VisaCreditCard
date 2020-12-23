@@ -1,0 +1,93 @@
+.container {
+    position: relative;
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        width: 15rem;
+        height: 15rem;
+        border-radius: 50%;
+        box-shadow: $box-shadow;
+        animation: orbit 5s linear infinite;
+        @media only screen and (max-width: $bp620) {
+            width: 10rem;
+            height: 10rem;
+         }
+    }
+    &::before {
+        background: $orange-light;
+        background: -moz-radial-gradient(top right, $orange-light, $orange-dark);
+        background: radial-gradient(top right, $orange-light, $orange-dark);
+        background: -webkit-radial-gradient(top right, $orange-light, $orange-dark);
+        z-index:-1;
+    }
+    &::after {
+        background: $yellow-light;
+        background: -moz-radial-gradient(top right, $yellow-light, $blue-light);
+        background: radial-gradient(top right, $yellow-light, $blue-light);
+        background: -webkit-radial-gradient(top right, $yellow-light, $blue-light);
+        animation-delay: 2.5s;
+        right: 0;
+        top: 0;
+        z-index: -2;
+    }
+
+    &__card {
+        display: grid;
+        grid-template-rows: 1fr min-content;
+        grid-row-gap: 1rem;
+        font-size: 2.5rem;
+        border: 1px solid #ffffff;
+        border-radius: 15px;
+        box-shadow:$box-shadow;
+        overflow: hidden;
+        height: 24rem;
+        width: 39rem;
+        z-index: 2;
+        @media only screen and (max-width: $bp620) {
+            font-size: 2rem;
+            height: 20rem;
+            width: 35rem;
+          }
+        &::before {
+            content: "";
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(3px) saturate(100%) contrast(45%) brightness(130%);
+            border-radius: 15px;
+        }
+        
+        &__info {
+           display: grid;
+           justify-self: center;
+           align-self: end;
+           grid-row-gap: 1rem;
+           color: $grey;
+           font-weight: 700;
+           z-index:2;
+        }
+        &__info2{
+            display: grid;
+            grid-template-rows: 1fr min-content;
+            align-self: end;
+            margin-left: 1.5rem;
+            color: $grey;
+            font-weight: 700;
+            z-index:2;
+            &__logo {
+                width: 7.5rem;
+                height: 7.5rem;
+                justify-self: right;
+                align-self: end;
+                margin-right: 1.6rem;
+                @media only screen and (max-width: $bp620) {
+                    width: 5rem;
+                    height: 5rem;
+                 }
+            }
+        }
+        
+    }
+}

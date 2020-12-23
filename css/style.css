@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata&display=swap");
+* {
+  margin: 0;
+  padding: 0; }
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; }
+
+body {
+  background: url(../img/bg.jpeg) no-repeat center center;
+  background-size: cover;
+  min-height: 100vh;
+  font-family: "Inconsolata", monospace;
+  display: grid;
+  place-items: center; }
+  @media only screen and (max-width: 32.1875em) {
+    body {
+      height: 100%; } }
+
+.container {
+  position: relative; }
+  .container::before, .container::after {
+    content: "";
+    position: absolute;
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+    animation: orbit 5s linear infinite; }
+    @media only screen and (max-width: 38.75em) {
+      .container::before, .container::after {
+        width: 10rem;
+        height: 10rem; } }
+  .container::before {
+    background: #ffe897;
+    background: -moz-radial-gradient(top right, #ffe897, #f98a05);
+    background: radial-gradient(top right, #ffe897, #f98a05);
+    background: -webkit-radial-gradient(top right, #ffe897, #f98a05);
+    z-index: -1; }
+  .container::after {
+    background: #e0e793;
+    background: -moz-radial-gradient(top right, #e0e793, #6dd0f1);
+    background: radial-gradient(top right, #e0e793, #6dd0f1);
+    background: -webkit-radial-gradient(top right, #e0e793, #6dd0f1);
+    animation-delay: 2.5s;
+    right: 0;
+    top: 0;
+    z-index: -2; }
+  .container__card {
+    display: grid;
+    grid-template-rows: 1fr min-content;
+    grid-row-gap: 1rem;
+    font-size: 2.5rem;
+    border: 1px solid #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    height: 24rem;
+    width: 39rem;
+    z-index: 2; }
+    @media only screen and (max-width: 38.75em) {
+      .container__card {
+        font-size: 2rem;
+        height: 20rem;
+        width: 35rem; } }
+    .container__card::before {
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(3px) saturate(100%) contrast(45%) brightness(130%);
+      border-radius: 15px; }
+    .container__card__info {
+      display: grid;
+      justify-self: center;
+      align-self: end;
+      grid-row-gap: 1rem;
+      color: #6f7886;
+      font-weight: 700;
+      z-index: 2; }
+    .container__card__info2 {
+      display: grid;
+      grid-template-rows: 1fr min-content;
+      align-self: end;
+      margin-left: 1.5rem;
+      color: #6f7886;
+      font-weight: 700;
+      z-index: 2; }
+      .container__card__info2__logo {
+        width: 7.5rem;
+        height: 7.5rem;
+        justify-self: right;
+        align-self: end;
+        margin-right: 1.6rem; }
+        @media only screen and (max-width: 38.75em) {
+          .container__card__info2__logo {
+            width: 5rem;
+            height: 5rem; } }
+
+@keyframes orbit {
+  from {
+    transform: rotate(0deg) translateX(10rem) rotate(0deg); }
+  to {
+    transform: rotate(360deg) translateX(10rem) rotate(-360deg); } }
+
+@media only screen and (max-width: 38.75em) {
+  @keyframes orbit {
+    from {
+      transform: rotate(0deg) translateX(6rem) rotate(0deg); }
+    to {
+      transform: rotate(360deg) translateX(6rem) rotate(-360deg); } } }

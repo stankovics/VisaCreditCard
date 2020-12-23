@@ -1,0 +1,18 @@
+@keyframes orbit {
+    from {
+        transform: rotate(0deg) translateX(10rem) rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg) translateX(10rem) rotate(-360deg);
+    }
+}
+@media only screen and (max-width: $bp620) {
+    @keyframes orbit {
+        from {
+            transform: rotate(0deg) translateX(6rem) rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg) translateX(6rem) rotate(-360deg);
+        }
+    }
+ }

@@ -1,0 +1,20 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; //1rem = 10px 
+}
+body {
+    background:url(../img/bg.jpeg) no-repeat center center;
+    background-size: cover;
+    min-height: 100vh;
+    font-family:$font;
+    display: grid;
+    place-items: center;
+    @media only screen and (max-width: $bp515) {
+        height: 100%;
+     }
+
+}
